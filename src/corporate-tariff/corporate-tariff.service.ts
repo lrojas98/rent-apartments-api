@@ -28,13 +28,7 @@ export class CorporateTariffService {
   }
 
   async findAll(options?: FindAndCountOptions<CorporateTariff>) {
-    const { attributes, include, where } = options;
-
-    const corporateTariffs = await this.corporateTariffModel.findAll({
-      attributes: attributes,
-      include: include,
-      where: where,
-    });
+    const corporateTariffs = await this.corporateTariffModel.findAndCountAll(options);
 
     return corporateTariffs;
   }

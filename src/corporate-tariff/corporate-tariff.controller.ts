@@ -21,7 +21,7 @@ export class CorporateTariffController {
   @Get()
   findAll(
     @Query(PaginationPipe) pagination: IPagination,
-  ): Promise<CorporateTariff[]> {
+  ): Promise<{ rows: CorporateTariff[]; count: number; }>{
     const findOptions: FindAndCountOptions<CorporateTariff> = {};
 
     findOptions.limit = pagination.limit;

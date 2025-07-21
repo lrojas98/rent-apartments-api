@@ -27,13 +27,7 @@ export class ClientService {
   }
 
   async findAll(options?: FindAndCountOptions<Client>) {
-    const { attributes, include, where } = options;
-
-    const clients = await this.clientModel.findAll({
-      attributes: attributes,
-      include: include,
-      where: where,
-    });
+    const clients = await this.clientModel.findAll(options);
 
     return clients;
   }
