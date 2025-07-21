@@ -28,13 +28,7 @@ export class PropertyContentService {
   }
 
   async findAll(options?: FindAndCountOptions<PropertyContent>) {
-    const { attributes, include, where } = options;
-
-    const content = await this.propertyContentModel.findAll({
-      attributes: attributes,
-      include: include,
-      where: where,
-    });
+    const content = await this.propertyContentModel.findAll(options);
 
     return content;
   }

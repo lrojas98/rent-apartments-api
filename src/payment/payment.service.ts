@@ -40,13 +40,7 @@ export class PaymentService {
   }
 
   async findOne(options?: FindOptions<Payment>) {
-    const { attributes, include, where } = options;
-
-    const payment = await this.paymentModel.findOne({
-      attributes: attributes,
-      include: include,
-      where: where,
-    });
+    const payment = await this.paymentModel.findOne(options);
 
     return payment;
   }

@@ -28,13 +28,7 @@ export class ReservationService {
   }
 
   async findAll(options?: FindAndCountOptions<Reservation>) {
-    const { attributes, include, where } = options;
-
-    const reservations = await this.reservationModel.findAll({
-      attributes: attributes,
-      include: include,
-      where: where,
-    });
+    const reservations = await this.reservationModel.findAll(options);
 
     return reservations;
   }

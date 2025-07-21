@@ -28,13 +28,7 @@ export class TouristTariffService {
   }
 
   async findAll(options?: FindAndCountOptions<TouristTariff>) {
-    const { attributes, include, where } = options;
-
-    const touristTariffs = await this.touristTariffModel.findAll({
-      attributes: attributes,
-      include: include,
-      where: where,
-    });
+    const touristTariffs = await this.touristTariffModel.findAll(options);
 
     return touristTariffs;
   }
